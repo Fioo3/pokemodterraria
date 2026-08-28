@@ -522,6 +522,8 @@ Projectiles: {
 	FlaaffyPetProjectileShiny.DisplayName: Flaaffy Pet Projectile Shiny
 	MareepPetProjectile.DisplayName: Mareep Pet Projectile
 	MareepPetProjectileShiny.DisplayName: Mareep Pet Projectile Shiny
+	TerrarianMewtwoPetProjectile.DisplayName: Terrarian Mewtwo Pet Projectile
+	TerrarianMewtwoPetProjectileShiny.DisplayName: Terrarian Mewtwo Pet Projectile Shiny
 	PichuPetProjectileShiny.DisplayName: Pichu Pet Projectile Shiny
 	PichuPetProjectile.DisplayName: Pichu Pet Projectile
 	MarillPetProjectileShiny.DisplayName: Marill Pet Projectile Shiny
@@ -615,6 +617,12 @@ Projectiles: {
 	MimejrPetProjectileShiny.DisplayName: Mime Jr. Pet Projectile Shiny
 	MimeJrPetProjectile.DisplayName: Mime Jr Pet Projectile
 	MimeJrPetProjectileShiny.DisplayName: Mime Jr Pet Projectile Shiny
+	MewtwoBossOverheat.DisplayName: Mewtwo Boss Overheat
+	MewtwoBossShadowBall.DisplayName: Mewtwo Boss Shadow Ball
+	RotomPetProjectileShiny.DisplayName: Rotom Pet Projectile Shiny
+	RotomPetProjectile.DisplayName: Rotom Pet Projectile
+	AzurillPetProjectileShiny.DisplayName: Azurill Pet Projectile Shiny
+	AzurillPetProjectile.DisplayName: Azurill Pet Projectile
 }
 
 Items: {
@@ -2555,9 +2563,10 @@ Items: {
 	}
 
 	DynamaxBand: {
-		DisplayName: Dynamax Band
+		DisplayName: Dynamax Band (WIP)
 		Tooltip:
 			'''
+			WORK IN PROGRESS (Pokemon cannot attack in this state)
 			Allows you to dynamax your pokemon once per day
 			When used, the next pokemon sent will be affected by the Dynamax phenomenon
 			'''
@@ -2659,6 +2668,74 @@ Items: {
 			'''
 	}
 
+	GoldenTrainerGlove: {
+		DisplayName: Golden Trainer Glove
+		Tooltip:
+			'''
+			When your Pokemon hits an enemy within a radius of {0} blocks:
+			{1} extra Pokemon damage
+			20% chance of inflicting the Ichor debuff
+			'''
+	}
+
+	SilverTrainerGlove: {
+		DisplayName: Silver Trainer Glove
+		Tooltip:
+			'''
+			When your Pokemon hits an enemy within a radius of {0} blocks:
+			{1} extra Pokemon damage
+			20% chance of inflicting the Cursed Inferno debuff
+			'''
+	}
+
+	CrystalTrainerGlove: {
+		DisplayName: Crystal Trainer Glove
+		Tooltip:
+			'''
+			When your Pokemon hits an enemy within a radius of {0} blocks:
+			{1} extra Pokemon damage
+			'''
+	}
+
+	MalformedSample: {
+		Tooltip: "{$CommonItemTooltip.GeneticSample}"
+		DisplayName: Malformed Sample
+	}
+
+	MewtwoBossSummonItem: {
+		Tooltip: Summons the Malformed Subject.
+		DisplayName: Experimental Transmitter
+	}
+
+	MewtwoBossBag: {
+		Tooltip: ""
+		DisplayName: Treasure Bag
+	}
+
+	MewtwoBossMask: {
+		Tooltip: ""
+		DisplayName: Malformed Subject Mask
+	}
+
+	HallowedTrainerGlove: {
+		DisplayName: Hallowed Trainer Glove
+		Tooltip:
+			'''
+			When your Pokemon hits an enemy within a radius of {0} blocks:
+			{1} extra Pokemon damage
+			'''
+	}
+
+	ChlorophyteTrainerGlove: {
+		DisplayName: Chlorophyte Trainer Glove
+		Tooltip:
+			'''
+			When your Pokemon hits an enemy within a radius of {0} blocks:
+			{1} extra Pokemon damage
+			Trainer gets the Dryad's Blessing buff
+			'''
+	}
+
 	SafetyVest: {
 		DisplayName: Safety Vest
 		Tooltip:
@@ -2667,6 +2744,21 @@ Items: {
 			When your active pokemon has 20% HP or less, it returns to its pokeball
 			Your pokemon emit some light
 			'''
+	}
+
+	PerfectedSample: {
+		DisplayName: Perfected Sample
+		Tooltip: "{$CommonItemTooltip.GeneticSample}"
+	}
+
+	MewtwoBossRelicItem: {
+		DisplayName: Malformed Subject Relic
+		Tooltip: ""
+	}
+
+	MewtwoBossTrophyItem: {
+		DisplayName: Malformed Subject Trophy
+		Tooltip: ""
 	}
 
 	ReinforcedBand: {
@@ -5314,13 +5406,13 @@ NPCs: {
 	}
 
 	FlaaffyCritterNPC: {
-		DisplayName: Flaaffy
 		Description: If its coat becomes fully charged with electricity, its tail lights up. Flaaffy can fire hair that zaps on impact.
+		DisplayName: Flaaffy
 	}
 
 	AmpharosCritterNPC: {
-		DisplayName: Ampharos
 		Description: The tip of its tail shines brightly. In the olden days, people sent signals using the light from this Pokémon's tail.
+		DisplayName: Ampharos
 	}
 
 	AmpharosMegaCritterNPC: {
@@ -5393,6 +5485,11 @@ NPCs: {
 		Description: Being bitten by Shellder gave it intelligence comparable to that of internationally recognized scientists.
 	}
 
+	AzurillCritterNPC: {
+		DisplayName: Azurill
+		Description: It's a Pokémon that lives by water. It moves quickly on land by bouncing on its big tail.
+	}
+
 	MawileCritterNPC: {
 		DisplayName: Mawile
 		Description: Attached to its head is a huge set of jaws formed by horns. It can chew through iron beams.
@@ -5426,6 +5523,11 @@ NPCs: {
 	LickilickyCritterNPC: {
 		DisplayName: Lickilicky
 		Description: It wraps things with its extensible tongue. Getting too close to it will leave you soaked with drool.
+	}
+
+	RotomCritterNPC: {
+		DisplayName: Rotom
+		Description: Its body is composed of plasma. It is known to infiltrate electronic devices and wreak havoc.
 	}
 
 	VenipedeCritterNPC: {
@@ -5531,6 +5633,11 @@ NPCs: {
 	TerrarianOmastarCritterNPC: {
 		DisplayName: Terrarian Omastar
 		Description: This Pokemon's many eyes allow it to peer into deep space.
+	}
+
+	TerrarianMewtwoCritterNPC: {
+		DisplayName: Terrarian Mewtwo
+		Description: ""
 	}
 
 	TerrarianSolosisCritterNPC: {
@@ -5782,6 +5889,7 @@ NPCs: {
 	WooperCritterNPCShiny.DisplayName: Wooper Shiny
 	QuagsireCritterNPCShiny.DisplayName: Quagsire Shiny
 	SlowkingCritterNPCShiny.DisplayName: Slowking Shiny
+	AzurillCritterNPCShiny.DisplayName: Azurill Shiny
 	MawileCritterNPCShiny.DisplayName: Mawile Shiny
 	CranidosCritterNPCShiny.DisplayName: Cranidos Shiny
 	RampardosCritterNPCShiny.DisplayName: Rampardos Shiny
@@ -5789,6 +5897,7 @@ NPCs: {
 	VespiquenCritterNPCShiny.DisplayName: Vespiquen Shiny
 	MagnezoneCritterNPCShiny.DisplayName: Magnezone Shiny
 	LickilickyCritterNPCShiny.DisplayName: Lickilicky Shiny
+	RotomCritterNPCShiny.DisplayName: Rotom Shiny
 	VenipedeCritterNPCShiny.DisplayName: Venipede Shiny
 	WhirlipedeCritterNPCShiny.DisplayName: Whirlipede Shiny
 	ScolipedeCritterNPCShiny.DisplayName: Scolipede Shiny
@@ -5805,6 +5914,7 @@ NPCs: {
 	TerrarianAerodactylCritterNPCShiny.DisplayName: Terrarian Aerodactyl Shiny
 	TerrarianOmanyteCritterNPCShiny.DisplayName: Terrarian Omanyte Shiny
 	TerrarianOmastarCritterNPCShiny.DisplayName: Terrarian Omastar Shiny
+	TerrarianMewtwoCritterNPCShiny.DisplayName: Terrarian Mewtwo Shiny
 	TerrarianSolosisCritterNPCShiny.DisplayName: Terrarian Solosis Shiny
 	TerrarianReuniclusCritterNPCShiny.DisplayName: Terrarian Reuniclus Shiny
 	TerrarianDuosionCritterNPCShiny.DisplayName: Terrarian Duosion Shiny
@@ -5906,6 +6016,8 @@ NPCs: {
 	G1T7_Blaine.DisplayName: Fire-type Gym Leader
 	G1T8_Giovanni.DisplayName: Ground-type Gym Leader
 	MimeJrCritterNPCShiny.DisplayName: Mime Jr Critter N P C Shiny
+	MewtwoBossBody.DisplayName: Malformed Subject
+	MewtwoBossMinion.DisplayName: Experiement Controller
 }
 
 Bestiary: {

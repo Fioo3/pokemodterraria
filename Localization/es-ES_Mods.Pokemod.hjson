@@ -522,6 +522,8 @@ Projectiles: {
 	// FlaaffyPetProjectileShiny.DisplayName: Flaaffy Pet Projectile Shiny
 	// MareepPetProjectile.DisplayName: Mareep Pet Projectile
 	// MareepPetProjectileShiny.DisplayName: Mareep Pet Projectile Shiny
+	// TerrarianMewtwoPetProjectile.DisplayName: Terrarian Mewtwo Pet Projectile
+	// TerrarianMewtwoPetProjectileShiny.DisplayName: Terrarian Mewtwo Pet Projectile Shiny
 	// PichuPetProjectileShiny.DisplayName: Pichu Pet Projectile Shiny
 	// PichuPetProjectile.DisplayName: Pichu Pet Projectile
 	// MarillPetProjectileShiny.DisplayName: Marill Pet Projectile Shiny
@@ -615,6 +617,12 @@ Projectiles: {
 	// MimejrPetProjectileShiny.DisplayName: Mime Jr. Pet Projectile Shiny
 	// MimeJrPetProjectile.DisplayName: Mime Jr Pet Projectile
 	// MimeJrPetProjectileShiny.DisplayName: Mime Jr Pet Projectile Shiny
+	// MewtwoBossOverheat.DisplayName: Mewtwo Boss Overheat
+	// MewtwoBossShadowBall.DisplayName: Mewtwo Boss Shadow Ball
+	// RotomPetProjectileShiny.DisplayName: Rotom Pet Projectile Shiny
+	// RotomPetProjectile.DisplayName: Rotom Pet Projectile
+	// AzurillPetProjectileShiny.DisplayName: Azurill Pet Projectile Shiny
+	// AzurillPetProjectile.DisplayName: Azurill Pet Projectile
 }
 
 Items: {
@@ -2555,9 +2563,10 @@ Items: {
 	}
 
 	DynamaxBand: {
-		DisplayName: Banda Dinamax
+		DisplayName: Banda Dinamax (WIP)
 		Tooltip:
 			'''
+			TRABAJO EN PROCESO (Los pokemon no pueden atacar en este estado)
 			Permite dinamaxizar a tus pokemon una vez al día
 			Al usarse, el siguiente pokemon enviado será afectado por el fenómeno Dynamax
 			'''
@@ -2659,6 +2668,74 @@ Items: {
 			'''
 	}
 
+	GoldenTrainerGlove: {
+		DisplayName: Guante dorado de entrenador
+		Tooltip:
+			'''
+			Cuando tu Pokemon golpea a un enemigo en un radio de {0} bloques:
+			{1} extra de daño de Pokemon
+			20% de probabilidad de inflingir el debuff Ichor
+			'''
+	}
+
+	SilverTrainerGlove: {
+		DisplayName: Guante plateado de entrenador
+		Tooltip:
+			'''
+			Cuando tu Pokemon golpea a un enemigo en un radio de {0} bloques:
+			{1} extra de daño de Pokemon
+			20% de probabilidad de inflingir el debuff El Averno
+			'''
+	}
+
+	CrystalTrainerGlove: {
+		DisplayName: Guante de cristal de entrenador
+		Tooltip:
+			'''
+			Cuando tu Pokemon golpea a un enemigo en un radio de {0} bloques:
+			{1} extra de daño de Pokemon
+			'''
+	}
+
+	MalformedSample: {
+		// Tooltip: "{$CommonItemTooltip.GeneticSample}"
+		// DisplayName: Malformed Sample
+	}
+
+	MewtwoBossSummonItem: {
+		// Tooltip: Summons the Malformed Subject.
+		// DisplayName: Experimental Transmitter
+	}
+
+	MewtwoBossBag: {
+		// Tooltip: ""
+		// DisplayName: Treasure Bag
+	}
+
+	MewtwoBossMask: {
+		// Tooltip: ""
+		// DisplayName: Malformed Subject Mask
+	}
+
+	HallowedTrainerGlove: {
+		DisplayName: Guante bendito de entrenador
+		Tooltip:
+			'''
+			Cuando tu Pokemon golpea a un enemigo en un radio de {0} bloques:
+			{1} extra de daño de Pokemon
+			'''
+	}
+
+	ChlorophyteTrainerGlove: {
+		DisplayName: Guante de clorofita de entrenador
+		Tooltip:
+			'''
+			Cuando tu Pokemon golpea a un enemigo en un radio de {0} bloques:
+			{1} extra de daño de Pokemon
+			El entrenador obtiene el buff Bendición de la dríada
+			'''
+	}
+
 	SafetyVest: {
 		DisplayName: Chaleco de seguridad
 		Tooltip:
@@ -2667,6 +2744,21 @@ Items: {
 			Cuando tu pokemon activo queda con 20% de HP o menos regresa a su pokeball
 			Tu pokemon emite algo de luz
 			'''
+	}
+
+	PerfectedSample: {
+		// DisplayName: Perfected Sample
+		// Tooltip: "{$CommonItemTooltip.GeneticSample}"
+	}
+
+	MewtwoBossRelicItem: {
+		// DisplayName: Malformed Subject Relic
+		// Tooltip: ""
+	}
+
+	MewtwoBossTrophyItem: {
+		// DisplayName: Malformed Subject Trophy
+		// Tooltip: ""
 	}
 
 	ReinforcedBand: {
@@ -5314,13 +5406,13 @@ NPCs: {
 	}
 
 	FlaaffyCritterNPC: {
-		DisplayName: Flaaffy
 		Description: Cuando su pelaje se carga de electricidad, su cola se enciende. Lanza pelo que electrocuta al contacto.
+		DisplayName: Flaaffy
 	}
 
 	AmpharosCritterNPC: {
-		DisplayName: Ampharos
 		Description: La punta de su cola emite una luz intensa que antiguamente la gente usaba para enviar señales.
+		DisplayName: Ampharos
 	}
 
 	AmpharosMegaCritterNPC: {
@@ -5393,6 +5485,11 @@ NPCs: {
 		Description: Al ser mordido por un Shellder, desarrolló una inteligencia comparable a la de una eminencia científica mundial.
 	}
 
+	AzurillCritterNPC: {
+		DisplayName: Azurill
+		Description: Vive cerca del agua. Cuando está en tierra firme, se desplaza a gran velocidad botando sobre su gran cola.
+	}
+
 	MawileCritterNPC: {
 		DisplayName: Mawile
 		Description: Las grandes fauces de su cabeza fueron cuernos en su día. Puede triturar vigas de acero con ellas.
@@ -5426,6 +5523,11 @@ NPCs: {
 	LickilickyCritterNPC: {
 		DisplayName: Lickilicky
 		Description: Agarra cualquier cosa con su lengua extensible. Quien se acerca mucho termina lleno de babas.
+	}
+
+	RotomCritterNPC: {
+		DisplayName: Rotom
+		Description: Su cuerpo está hecho de plasma. Se lo conoce por su capacidad para infiltrarse en dispositivos electrónicos y cometer fechorías.
 	}
 
 	VenipedeCritterNPC: {
@@ -5531,6 +5633,11 @@ NPCs: {
 	TerrarianOmastarCritterNPC: {
 		DisplayName: Omastar de Terraria
 		Description: Los numerosos ojos de este Pokémon le permiten observar el espacio profundo.
+	}
+
+	TerrarianMewtwoCritterNPC: {
+		DisplayName: Mewtwo de Terraria
+		Description: ""
 	}
 
 	TerrarianSolosisCritterNPC: {
@@ -5782,6 +5889,7 @@ NPCs: {
 	// WooperCritterNPCShiny.DisplayName: Wooper Shiny
 	// QuagsireCritterNPCShiny.DisplayName: Quagsire Shiny
 	// SlowkingCritterNPCShiny.DisplayName: Slowking Shiny
+	// AzurillCritterNPCShiny.DisplayName: Azurill Shiny
 	// MawileCritterNPCShiny.DisplayName: Mawile Shiny
 	// CranidosCritterNPCShiny.DisplayName: Cranidos Shiny
 	// RampardosCritterNPCShiny.DisplayName: Rampardos Shiny
@@ -5789,6 +5897,7 @@ NPCs: {
 	// VespiquenCritterNPCShiny.DisplayName: Vespiquen Shiny
 	// MagnezoneCritterNPCShiny.DisplayName: Magnezone Shiny
 	// LickilickyCritterNPCShiny.DisplayName: Lickilicky Shiny
+	// RotomCritterNPCShiny.DisplayName: Rotom Shiny
 	// VenipedeCritterNPCShiny.DisplayName: Venipede Shiny
 	// WhirlipedeCritterNPCShiny.DisplayName: Whirlipede Shiny
 	// ScolipedeCritterNPCShiny.DisplayName: Scolipede Shiny
@@ -5800,22 +5909,23 @@ NPCs: {
 	// TinkatinkCritterNPCShiny.DisplayName: Tinkatink Shiny
 	// TinkatonCritterNPCShiny.DisplayName: Tinkaton Shiny
 	// TinkatuffCritterNPCShiny.DisplayName: Tinkatuff Shiny
-	// TerrarianKabutoCritterNPCShiny.DisplayName: Terrarian Kabuto Shiny
-	// TerrarianKabutopsCritterNPCShiny.DisplayName: Terrarian Kabutops Shiny
-	// TerrarianAerodactylCritterNPCShiny.DisplayName: Terrarian Aerodactyl Shiny
-	// TerrarianOmanyteCritterNPCShiny.DisplayName: Terrarian Omanyte Shiny
-	// TerrarianOmastarCritterNPCShiny.DisplayName: Terrarian Omastar Shiny
-	// TerrarianSolosisCritterNPCShiny.DisplayName: Terrarian Solosis Shiny
-	// TerrarianReuniclusCritterNPCShiny.DisplayName: Terrarian Reuniclus Shiny
-	// TerrarianDuosionCritterNPCShiny.DisplayName: Terrarian Duosion Shiny
-	// AlolanRaticateCritterNPCShiny.DisplayName: Alolan Raticate Shiny
-	// AlolanRattataCritterNPCShiny.DisplayName: Alolan Rattata Shiny
-	// AlolanDiglettCritterNPCShiny.DisplayName: Alolan Diglett Shiny
-	// AlolanDugtrioCritterNPCShiny.DisplayName: Alolan Dugtrio Shiny
-	// AlolanSandshrewCritterNPCShiny.DisplayName: Alolan Sandshrew Shiny
-	// AlolanSandslashCritterNPCShiny.DisplayName: Alolan Sandslash Shiny
-	// HisuianVoltorbCritterNPCShiny.DisplayName: Hisuian Voltorb Shiny
-	// HisuianElectrodeCritterNPCShiny.DisplayName: Hisuian Electrode Shiny
+	TerrarianKabutoCritterNPCShiny.DisplayName: Kabuto de Terraria Shiny
+	TerrarianKabutopsCritterNPCShiny.DisplayName: Kabutops de Terraria Shiny
+	TerrarianAerodactylCritterNPCShiny.DisplayName: Aerodactyl de Terraria Shiny
+	TerrarianOmanyteCritterNPCShiny.DisplayName: Omanyte de Terraria Shiny
+	TerrarianOmastarCritterNPCShiny.DisplayName: Omastar de Terraria Shiny
+	TerrarianMewtwoCritterNPCShiny.DisplayName: Mewtwo de Terraria Shiny
+	TerrarianSolosisCritterNPCShiny.DisplayName: Solosis de Terraria Shiny
+	TerrarianReuniclusCritterNPCShiny.DisplayName: Reuniclus de Terraria Shiny
+	TerrarianDuosionCritterNPCShiny.DisplayName: Duosion de Terraria Shiny
+	AlolanRaticateCritterNPCShiny.DisplayName: Raticate de Alola Shiny
+	AlolanRattataCritterNPCShiny.DisplayName: Rattata de Alola Shiny
+	AlolanDiglettCritterNPCShiny.DisplayName: Diglett de Alola Shiny
+	AlolanDugtrioCritterNPCShiny.DisplayName: Dugtrio de Alola Shiny
+	AlolanSandshrewCritterNPCShiny.DisplayName: Sandshrew de Alola Shiny
+	AlolanSandslashCritterNPCShiny.DisplayName: Sandslash de Alola Shiny
+	HisuianVoltorbCritterNPCShiny.DisplayName: Voltorb de Hisui Shiny
+	HisuianElectrodeCritterNPCShiny.DisplayName: Electrode de Hisui Shiny
 	// OnixCritterNPC_Body.DisplayName: Onix
 	// OnixCritterNPC_Tail.DisplayName: Onix
 	// OnixCritterNPCShiny_Body.DisplayName: Onix Shiny
@@ -5906,6 +6016,8 @@ NPCs: {
 	G1T7_Blaine.DisplayName: Lider de gimnasio de tipo Fuego
 	G1T8_Giovanni.DisplayName: Lider de gimnasio de tipo Tierra
 	// MimeJrCritterNPCShiny.DisplayName: Mime Jr Critter N P C Shiny
+	// MewtwoBossBody.DisplayName: Malformed Subject
+	// MewtwoBossMinion.DisplayName: Experiement Controller
 }
 
 Bestiary: {

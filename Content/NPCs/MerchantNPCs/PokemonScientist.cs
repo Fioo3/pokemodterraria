@@ -398,6 +398,7 @@ namespace Pokemod.Content.NPCs.MerchantNPCs
 				CaughtPokemonItem pokeItem = (CaughtPokemonItem)Main.item[item].ModItem;
 				pokeItem.SetPokemonData(sampleItem.pokemonName, Shiny: shiny, BallType: ball.Name, level: lvl, IVs: IVs, nature: nature);
 				pokeItem.currentHP = pokeItem.GetPokemonStats()[0];
+				pokeItem.happiness = 70;
 				if (ModContent.TryFind<ModProjectile>("Pokemod", ball.Name.Replace("Item", "Proj"), out ModProjectile proj))
 				{
                     if (proj is BallProj ballProj)
@@ -405,6 +406,8 @@ namespace Pokemod.Content.NPCs.MerchantNPCs
                         ballProj.SetExtraPokemonEffects(ref pokeItem);
                     }
                 }
+
+				player.GetModPlayer<PokemonPlayer>().RegisterPokemon(sampleItem.pokemonName, true, shiny);
 
                 // Manually Adds the pokemon to the Bestiary when obtained
                 string persistentId = "Pokemod/" + sampleItem.pokemonName + "CritterNPC" + (shiny ? "Shiny" : "");

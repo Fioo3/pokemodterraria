@@ -420,8 +420,8 @@ namespace Pokemod.Content.NPCs
             {"Koffing", new PokemonInfo(0109, [40, 65, 95, 60, 45, 35], [(int)TypeIndex.Poison], [new MoveLvl("Tackle"), new MoveLvl("PoisonPowder"), new MoveLvl("Smokescreen", 8), new MoveLvl("Crunch", 16), new MoveLvl("Sludge", 20), new MoveLvl("SelfDestruct", 24), new MoveLvl("SludgeBomb", 32), new MoveLvl("Toxic", 36), new MoveLvl("Explosion", 44)], [(int)EggGroups.Amorphous], 0.6f, 1.0f, (int)StageIndex.Basic, (int)ExpTypes.MediumFast, artist: "JACSMITH")},
             {"Weezing", new PokemonInfo(0110, [65, 90, 120, 85, 70, 60], [(int)TypeIndex.Poison], [new MoveLvl("DoubleKick"), new MoveLvl("Tackle", 1), new MoveLvl("PoisonPowder", 1), new MoveLvl("Smokescreen", 8), new MoveLvl("Crunch", 16), new MoveLvl("Sludge", 20), new MoveLvl("SelfDestruct", 24), new MoveLvl("SludgeBomb", 32), new MoveLvl("Toxic", 38), new MoveLvl("Explosion", 50)], [(int)EggGroups.Amorphous], 1.2f, 9.5f, (int)StageIndex.Stage1, (int)ExpTypes.MediumFast, artist: "JACSMITH")},
 
-            {"Rhyhorn", new PokemonInfo(0111, [80, 85, 95, 30, 30, 25], [(int)TypeIndex.Ground,(int)TypeIndex.Rock], [new MoveLvl("Tackle"), new MoveLvl("RockSlide", 25), new MoveLvl("StoneEdge", 50)], [(int)EggGroups.Monster, (int)EggGroups.Field], 1.0f, 115.0f, (int)StageIndex.Basic, (int)ExpTypes.Slow, completed: false)},
-            {"Rhydon", new PokemonInfo(0112, [105, 130, 120, 45, 45, 40], [(int)TypeIndex.Ground,(int)TypeIndex.Rock], [new MoveLvl("RockThrow"), new MoveLvl("Earthquake"), new MoveLvl("RockSlide", 25), new MoveLvl("StoneEdge", 50)], [(int)EggGroups.Monster, (int)EggGroups.Field], 1.9f, 120.0f, (int)StageIndex.Stage1, (int)ExpTypes.Slow, completed: false)},
+            {"Rhyhorn", new PokemonInfo(0111, [80, 85, 95, 30, 30, 25], [(int)TypeIndex.Ground,(int)TypeIndex.Rock], [new MoveLvl("Tackle"), new MoveLvl("RockSlide", 25), new MoveLvl("DrillRun", 35), new MoveLvl("TakeDown", 40), new MoveLvl("Earthquake", 45), new MoveLvl("StoneEdge", 50)], [(int)EggGroups.Monster, (int)EggGroups.Field], 1.0f, 115.0f, (int)StageIndex.Basic, (int)ExpTypes.Slow, artist: "Dusk")},
+            {"Rhydon", new PokemonInfo(0112, [105, 130, 120, 45, 45, 40], [(int)TypeIndex.Ground,(int)TypeIndex.Rock], [new MoveLvl("RockThrow"), new MoveLvl("RockSlide", 25), new MoveLvl("DrillRun", 35), new MoveLvl("TakeDown", 40), new MoveLvl("Earthquake", 47), new MoveLvl("StoneEdge", 54)], [(int)EggGroups.Monster, (int)EggGroups.Field], 1.9f, 120.0f, (int)StageIndex.Stage1, (int)ExpTypes.Slow, artist: "Dusk")},
 
             {"Chansey", new PokemonInfo(0113, [250, 5, 5, 35, 105, 50], [(int)TypeIndex.Normal], [new MoveLvl("Tackle"), new MoveLvl("Swift"), new MoveLvl("Harden", 8), new MoveLvl("DoubleKick", 16), new MoveLvl("TakeDown", 24), new MoveLvl("HealPulse", 32), new MoveLvl("DoubleEdge", 40)], [(int)EggGroups.Fairy], 1.1f, 34.6f, (int)StageIndex.Basic, (int)ExpTypes.Fast, artist: "JACSMITH")},
 
@@ -477,7 +477,7 @@ namespace Pokemod.Content.NPCs
             {"Dragonair", new PokemonInfo(0148, [61, 84, 65, 70, 70, 70], [(int)TypeIndex.Dragon], [new MoveLvl("Tackle", 1), new MoveLvl("ThunderWave", 5), new MoveLvl("Gust", 10), new MoveLvl("DragonTail", 15), new MoveLvl("Agility", 20), new MoveLvl("Slam", 25), new MoveLvl("AquaTail", 33), new MoveLvl("WaterPulse", 36), new MoveLvl("DragonRush", 48), new MoveLvl("HyperBeam", 60)], [(int)EggGroups.Water1, (int)EggGroups.Dragon], 4.0f, 16.5f, (int)StageIndex.Stage1, (int)ExpTypes.Slow, artist: "JACSMITH")},
             {"Dragonite", new PokemonInfo(0149, [91, 134, 95, 100, 100, 80], [(int)TypeIndex.Dragon,(int)TypeIndex.Flying], [new MoveLvl("Hurricane"), new MoveLvl("Tackle", 1), new MoveLvl("FirePunch", 1), new MoveLvl("ThunderPunch", 1), new MoveLvl("ThunderWave", 5), new MoveLvl("Gust", 10), new MoveLvl("DragonTail", 15), new MoveLvl("Agility", 20), new MoveLvl("Slam", 25), new MoveLvl("AquaTail", 33), new MoveLvl("WaterPulse", 36), new MoveLvl("DragonRush", 48), new MoveLvl("ExtremeSpeed", 50), new MoveLvl("HyperBeam", 64)], [(int)EggGroups.Water1, (int)EggGroups.Dragon], 2.2f, 210.0f, (int)StageIndex.Stage2, (int)ExpTypes.Slow, artist: "JACSMITH")},
 
-            {"Mewtwo", new PokemonInfo(0150, [106, 110, 90, 154, 90, 130], [(int)TypeIndex.Psychic], [new MoveLvl("Psychic")], [(int)EggGroups.NoEggs], 2.0f, 122.0f, (int)StageIndex.Basic, (int)ExpTypes.Slow, legendary: true, completed: false)},
+            {"Mewtwo", new PokemonInfo(0150, [106, 110, 90, 154, 90, 130], [(int)TypeIndex.Psychic], [new MoveLvl("Teleport", 1), new MoveLvl("Confusion", 1), new MoveLvl("Swift", 8), new MoveLvl("AncientPower", 16), new MoveLvl("PsychoCut", 24), new MoveLvl("CosmicPower", 32), new MoveLvl("ShadowBall", 40), new MoveLvl("Psychic", 48), new MoveLvl("Recover", 56)], [(int)EggGroups.NoEggs], 2.0f, 122.0f, (int)StageIndex.Basic, (int)ExpTypes.Slow, legendary: true, completed: false, artist: "RollinMan")},
             {"Mew", new PokemonInfo(0151, [100, 100, 100, 100, 100, 100], [(int)TypeIndex.Psychic], [new MoveLvl("Psychic")], [(int)EggGroups.NoEggs], 0.4f, 4.0f, (int)StageIndex.Basic, (int)ExpTypes.MediumSlow, legendary: true, completed: false)},
             
             //Gen 2
@@ -527,6 +527,7 @@ namespace Pokemod.Content.NPCs
             
             {"Delibird", new PokemonInfo(0225, [45, 55, 45, 65, 45, 75], [(int)TypeIndex.Ice,(int)TypeIndex.Flying], [new MoveLvl("Tackle"), new MoveLvl("IceShard", 8), new MoveLvl("IceFang", 32), new MoveLvl("Blizzard", 50)], [(int)EggGroups.Field], 0.9f, 16.0f, (int)StageIndex.Basic, (int)ExpTypes.Fast, artist: "Kerpi")},
             //Gen 3
+            {"Azurill", new PokemonInfo(0298, [50, 20, 40, 20, 40, 20], [(int)TypeIndex.Normal,(int)TypeIndex.Fairy], [new MoveLvl("Tackle", 1), new MoveLvl("WaterGun", 1), new MoveLvl("Splash", 1), new MoveLvl("BubbleBeam", 6), new MoveLvl("Slam", 12)], [(int)EggGroups.NoEggs], 0.2f, 2.0f, (int)StageIndex.Baby, (int)ExpTypes.Fast, artist: "JACSMITH")},
             {"Mawile", new PokemonInfo(0303, [50, 85, 85, 55, 55, 50], [(int)TypeIndex.Steel,(int)TypeIndex.Fairy], [new MoveLvl("Tackle"), new MoveLvl("Bite", 12), new MoveLvl("Harden", 20), new MoveLvl("Crunch", 28), new MoveLvl("FlashCannon", 36), new MoveLvl("DoubleEdge", 44)], [(int)EggGroups.HumanLike], 0.6f, 11.5f, (int)StageIndex.Basic, (int)ExpTypes.Fast, artist: "Fiona")},
 
             //Gen 4
@@ -540,6 +541,7 @@ namespace Pokemod.Content.NPCs
             {"Lickilicky", new PokemonInfo(0463, [110, 85, 95, 80, 95, 50], [(int)TypeIndex.Normal], [new MoveLvl("Tackle", 1), new MoveLvl("Supersonic", 1), new MoveLvl("DoubleEdge", 25)], [(int)EggGroups.Monster], 1.7f, 140.0f, (int)StageIndex.Stage1, (int)ExpTypes.MediumFast, artist: "Kerpi")},
 
             {"MimeJr", new PokemonInfo(0440, [20, 25, 45, 70, 90, 60], [(int)TypeIndex.Psychic, (int)TypeIndex.Fairy], [new MoveLvl("Tackle"), new MoveLvl("ConfuseRay", 1), new MoveLvl("Confusion", 8)], [(int)EggGroups.NoEggs], 0.6f, 13.0f, (int)StageIndex.Baby, (int)ExpTypes.MediumFast, artist: "Fiona")},
+            {"Rotom", new PokemonInfo(0479, [50, 50, 77, 95, 77, 91], [(int)TypeIndex.Electric,(int)TypeIndex.Ghost], [new MoveLvl("DoubleTeam", 1), new MoveLvl("ThunderShock", 5), new MoveLvl("ConfuseRay", 10), new MoveLvl("Charge", 15), new MoveLvl("ElectroBall", 20), new MoveLvl("ThunderWave", 25), new MoveLvl("ShockWave", 30), new MoveLvl("Hex", 35), new MoveLvl("Swift", 40), new MoveLvl("Thunderbolt", 45), new MoveLvl("Discharge", 50)], [(int)EggGroups.Amorphous], 0.3f, 0.3f, (int)StageIndex.Basic, (int)ExpTypes.MediumFast, artist: "JACSMITH")},
 
             //Gen 5
             {"Venipede", new PokemonInfo(0543, [30, 45, 59, 30, 39, 57], [(int)TypeIndex.Bug,(int)TypeIndex.Poison], [new MoveLvl("PoisonSting", 1), new MoveLvl("Screech", 16), new MoveLvl("PinMissile", 20), new MoveLvl("TakeDown", 24), new MoveLvl("Toxic", 36), new MoveLvl("DoubleEdge", 52)], [(int)EggGroups.Bug], 0.4f, 5.3f, (int)StageIndex.Basic, (int)ExpTypes.MediumSlow, artist: "Kerpi")},
@@ -598,6 +600,7 @@ namespace Pokemod.Content.NPCs
             {"TerrarianSolosis", new PokemonInfo(0577, [45, 30, 40, 105, 50, 20], [(int)TypeIndex.Poison], [new MoveLvl("PoisonSting"), new MoveLvl("PinMissile", 15), new MoveLvl("Toxic", 18)], [(int)EggGroups.Monster], 0.3f, 1.0f, (int)StageIndex.Basic, (int)ExpTypes.MediumSlow, artist: "Kerpi")},
             {"TerrarianDuosion", new PokemonInfo(0578, [65, 40, 50, 125, 60, 30], [(int)TypeIndex.Poison], [new MoveLvl("PoisonSting"), new MoveLvl("PinMissile", 15), new MoveLvl("Toxic", 18), new MoveLvl("Acid", 35)], [(int)EggGroups.Monster], 0.6f, 8.0f, (int)StageIndex.Stage1, (int)ExpTypes.MediumSlow, artist: "Kerpi")},
             {"TerrarianReuniclus", new PokemonInfo(0579, [110, 65, 75, 125, 85, 30], [(int)TypeIndex.Poison], [new MoveLvl("PoisonSting"), new MoveLvl("PinMissile", 15), new MoveLvl("Toxic", 18), new MoveLvl("Acid", 35), new MoveLvl("SludgeBomb", 50)], [(int)EggGroups.Monster], 1.0f, 21.1f, (int)StageIndex.Stage2, (int)ExpTypes.MediumSlow, artist: "Kerpi")},
+            {"TerrarianMewtwo", new PokemonInfo(0150, [106, 110, 100, 140, 94, 130], [(int)TypeIndex.Psychic, (int)TypeIndex.Fire], [new MoveLvl("Teleport", 1), new MoveLvl("FlameWheel", 1), new MoveLvl("Confusion", 8), new MoveLvl("AncientPower", 16), new MoveLvl("LavaPlume", 24), new MoveLvl("CosmicPower", 32), new MoveLvl("ShadowBall", 40), new MoveLvl("Psychic", 48), new MoveLvl("Overheat", 56)], [(int)EggGroups.NoEggs], 2.0f, 122.0f, (int)StageIndex.Basic, (int)ExpTypes.Slow, legendary: true, completed: false, artist: "RollinMan")},
         };
 
         public static int maxID = 0959;
@@ -633,6 +636,38 @@ namespace Pokemod.Content.NPCs
             if (index < 0) return "";
 
             return pokemonInfo.Keys.ToList()[index];
+        }
+
+        public static int GetHappinessLevel(int happiness)
+        {
+            int happinessLevel = 6;
+
+            if(happiness >= 255)
+            {
+                happinessLevel = 0;
+            }
+            else if(happiness >= 220)
+            {
+                happinessLevel = 1;
+            }
+            else if(happiness >= 150)
+            {
+                happinessLevel = 2;
+            }
+            else if(happiness >= 100)
+            {
+                happinessLevel = 3;
+            }
+            else if(happiness >= 50)
+            {
+                happinessLevel = 4;
+            }
+            else if(happiness > 0)
+            {
+                happinessLevel = 5;
+            }
+
+            return happinessLevel;
         }
 
         public static string[][] PokemonNatures = [
@@ -947,7 +982,7 @@ namespace Pokemod.Content.NPCs
         Jungle = 22, UndergroundJungle = 23,
         SurfaceMushroom = 24, UndergroundMushroom = 25,
         Sky = 26,
-        Beach = 27, UndergroundBeach = 27,
+        Beach = 27, UndergroundBeach = 61,
         Ocean = 28,
         Marble = 29,
         Granite = 30,

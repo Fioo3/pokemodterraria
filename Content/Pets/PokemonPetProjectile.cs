@@ -56,6 +56,8 @@ namespace Pokemod.Content.Pets
 		//Damage system variables
 		public bool immune = true;
         public int hurtTime = 60;
+		private int worldHurtTime = 30;
+		private int battleHurtTime = 30;
         public int currentHp = 0;
 		public string variant = "";
         public bool showHp;
@@ -1105,6 +1107,8 @@ namespace Pokemod.Content.Pets
 
 		public virtual void Movement(bool foundTarget, bool hostilesNearby, float distanceFromTarget, Vector2 targetCenter, float distanceToIdlePosition, Vector2 vectorToIdlePosition)
 		{
+			PokemonPlayer trainer = Main.player[Projectile.owner].GetModPlayer<PokemonPlayer>();
+
 			// Default movement parameters (here for attacking)
 			float speed = moveSpeed1;
 			float inertia = 20f;
@@ -1122,7 +1126,7 @@ namespace Pokemod.Content.Pets
 				Projectile.tileCollide = true;
 			}
 
-			if (moveStyle == (int)MovementStyle.Fly || (moveStyle != (int)MovementStyle.Hybrid && !isEnemy && Main.player[Projectile.owner].GetModPlayer<PokemonPlayer>().HasAirBalloon > 0))
+			if (moveStyle == (int)MovementStyle.Fly || (moveStyle != (int)MovementStyle.Hybrid && !isEnemy && trainer.HasAirBalloon > 0))
 			{
 				if (moveStyle != (int)MovementStyle.Fly)
 				{
@@ -1130,7 +1134,7 @@ namespace Pokemod.Content.Pets
 				}
 				isFlying = true;
 			}
-			else if(moveStyle != (int)MovementStyle.Hybrid && (Main.player[Projectile.owner].GetModPlayer<PokemonPlayer>().HasAirBalloon <= 0 || isEnemy))
+			else if(moveStyle != (int)MovementStyle.Hybrid && (trainer.HasAirBalloon <= 0 || isEnemy))
 			{
 				isFlying = false;
 			}
@@ -1178,6 +1182,16 @@ namespace Pokemod.Content.Pets
 						{
 							directionMod = -1f;
 						}
+					}
+
+					if(trainer.attackMode == (int)PokemonPlayer.AttackMode.Directed_Attack){
+						float between = Vector2.Distance(targetCenter, Projectile.Center);
+						bool lineOfSight = Collision.CanHitLine(Projectile.Center-Vector2.One, 2, 2, targetCenter-8*Vector2.One, 16, 16);
+
+						bool closeThroughWall = between < 150f;
+						bool throughWallRange = between < 500f;
+
+						if (!(lineOfSight || closeThroughWall || (canAttackThroughWalls && throughWallRange))) directionMod = 1f;
 					}
 
 					if(dynamax || isHeldByPlayer || statusCondition == (int)StatusConditions.Freeze || statusCondition == (int)StatusConditions.Sleep) speed = 0;
@@ -1237,11 +1251,10 @@ namespace Pokemod.Content.Pets
 							isFlying = true;
 						}
 					}
-					if (timer <= 0)
+					if (timer <= 0 && !dynamax)
 					{
 						if (canAttack && !(isHeldByPlayer && PokemonData.pokemonAttacks[currentAttack].contact))
 						{
-							PokemonPlayer trainer = Main.player[Projectile.owner].GetModPlayer<PokemonPlayer>();
 							if (!isEnemy && trainer.attackMode == (int)PokemonPlayer.AttackMode.Directed_Attack && (trainer.targetNPC != null || trainer.targetPlayer != null))
 							{
 								Entity directedTarget = null;
@@ -1645,7 +1658,7 @@ namespace Pokemod.Content.Pets
 			}
 
 			if (isSwimming) speedMultiplier *= 1.5f;
-
+			if (dynamax) speedMultiplier = 0;
 
 			if (timer <= 0)
 			{
@@ -1697,7 +1710,7 @@ namespace Pokemod.Content.Pets
 				canFall = true;
 			}
 
-			if (timer <= 0)
+			if (timer <= 0 && !dynamax)
 			{
 				if (canAttack && Main.player[Projectile.owner].controlUseItem)
 				{
@@ -2732,7 +2745,8 @@ namespace Pokemod.Content.Pets
                 hurtTime--;
 
                 if (hurtTime <= 0){
-                    hurtTime = 60;
+					if(Main.player[Projectile.owner].GetModPlayer<PokemonPlayer>().onBattle) hurtTime = battleHurtTime;
+					else hurtTime = worldHurtTime;
                     immune = false;
                 }
             }
@@ -2895,6 +2909,12 @@ namespace Pokemod.Content.Pets
 							megaEvolveSymbolTexture.Frame(1, 15, 0, (int)((60 - megaEvolveTimer) / 4)), Color.White, 0,
 							megaEvolveSymbolTexture.Frame(1, 15).Size() / 2f, Projectile.scale, SpriteEffects.None, 0);
 					}
+				}
+				if (Projectile.owner == Main.myPlayer && !dynamax && !isEnemy && Main.player[Projectile.owner].GetModPlayer<PokemonPlayer>().mouseOverPokemon == this)
+				{
+					Asset<Texture2D> happinessTexture = ModContent.Request<Texture2D>("Pokemod/Assets/Textures/PlayerVisuals/HappinessVisuals");
+
+					Main.EntitySpriteDraw(happinessTexture.Value, (Projectile.spriteDirection<0?(Projectile.TopLeft + new Vector2(-12,-12)):(Projectile.TopRight + new Vector2(12,-12))) - Main.screenPosition, happinessTexture.Frame(1, 7, 0, PokemonData.GetHappinessLevel(happiness)), Color.White, 0, happinessTexture.Frame(1, 7).Size() * 0.5f, 1, Projectile.spriteDirection<0?SpriteEffects.FlipHorizontally:SpriteEffects.None, 0);
 				}
 			}
         }
